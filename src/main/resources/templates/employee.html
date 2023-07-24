@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+    	<meta charset="utf-8">
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>HR Application</title>
+		<script  th:src="@{/js/jquery.min.js}" ></script>
+		<script  th:src="@{/js/jquery.dataTables.min.js}" ></script>
+		<script  th:src="@{/js/dataTables.bootstrap5.min.js}" ></script>
+		<script  th:src="@{/js/bootstrap.bundle.min.js}" ></script>
+		
+		
+		<link rel="stylesheet" th:href="@{/css//bootstrap-icons.css}">
+		<link rel="stylesheet" th:href="@{/css/jquery.dataTables.min.css}">
+		<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+		<link rel="stylesheet" th:href="@{/css/docs.css}">
+		<link rel="stylesheet" th:href="@{/css/dataTables.bootstrap5.min.css}">
+    </head>
+    <body>
+	    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+	      <div class="container-fluid">
+	        <a class="navbar-brand" href="#">LEADS</a>
+	        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+	          <span class="navbar-toggler-icon"></span>
+	        </button>
+	        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+	          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+	            <li class="nav-item">
+	              <a class="nav-link active" aria-current="page" href="/">Home</a>
+	            </li>
+	            
+	          </ul>
+	        </div>
+	      </div>
+	    </nav>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 offset-md-3 ">
+					<h3>Employee Entry</h3>
+					<form method="POST" action="/save" th:object="${employee}" class="row  ">
+						<input type="hidden" th:field="*{id}">
+						<div class="mb-3">
+							<label for="formFile" class="form-label">Title</label>
+							<input class="form-control" type="text" th:field="*{title}">
+						</div>
+						<div class="mb-3">
+							<label for="formFile" class="form-label">First Name</label>
+							<input class="form-control" type="text" th:field="*{firstname}">
+						</div>
+						<div class="mb-3">
+							<label for="formFile" class="form-label">Last Name</label>
+							<input class="form-control" type="text" th:field="*{lastname}">
+						</div>
+						<div class="mb-3">
+							<label for="formFile" class="form-label">Division</label>
+							<input class="form-control" type="text" th:field="*{division}">
+						</div>
+						<div class="mb-3">
+							<label for="formFile" class="form-label">Building</label>
+							<input class="form-control" type="text" th:field="*{building}">
+						</div>
+						<div class="mb-3">
+							<label for="formFile" class="form-label">Room</label>
+							<input class="form-control" type="text" th:field="*{room}">
+						</div>
+						<div class="col-12">
+						    <button type="submit" class="btn btn-primary">Save</button>
+						  </div>
+					</form>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+					
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			
+		</script>
+    </body>
+</html>
